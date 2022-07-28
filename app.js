@@ -84,7 +84,7 @@ function displayStats() {
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases    
-    catchphraseInput.textContent = '';
+    catchphraseEl.textContent = '';
 
     // loop through each catchphrase in state
     for (let catchphrase of catchphrases) {
