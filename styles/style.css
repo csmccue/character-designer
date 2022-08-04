@@ -23,6 +23,11 @@ body {
     background-image: url('../assets/bg.jpeg');
     background-size: 400px;
 }
+.stats {
+    display: flex;
+    flex-direction: column;
+}
+
 
 header {
     display: flex;
@@ -135,7 +140,9 @@ main {
 }
 
 .catchphrase {
+    display: grid;
     font-size: 2rem;
     font-family: cursive;
     text-align: center;
+    flex-direction: column;
 }
