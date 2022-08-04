@@ -2,14 +2,13 @@
 const headDropdown = document.getElementById('head-dropdown');
 const middleDropdown = document.getElementById('middle-dropdown');
 const bottomDropdown = document.getElementById('bottom-dropdown');
-const headEl = document.getElementById('head');
-const middleEl = document.getElementById('middle');
-const bottomEl = document.getElementById('bottom');
+
 const headImgTag = document.getElementById('head-img');
 const middleImgTag = document.getElementById('middle-img');
 const bottomImgTag = document.getElementById('bottom-img');
-const reportEl = document.getElementById('report');
+
 const catchphrasesEl = document.getElementById('catchphrases');
+
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
@@ -58,6 +57,7 @@ bottomDropdown.addEventListener('change', () => {
     bottomImgTag.src = `assets/${bottomDropdown.value}-pants.png`;
     // update the stats to show the new count (call displayStats() to do this work)
     displayStats();
+    
 });
 
 catchphraseButton.addEventListener('click', () => {
@@ -77,25 +77,23 @@ catchphraseButton.addEventListener('click', () => {
  
 function displayStats() {
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
-    console.log(changeHead);
     timesChanged.textContent = `you changed the head ${changeHead} times, the middle ${changeMiddle} times, the bottom ${changeBottom} times.`;
 }
 
 
 function displayCatchphrases() {
-    // clear out the DOM for the currently displayed catchphrases    
-    catchphraseEl.textContent = '';
 
+    // clear out the DOM for the currently displayed catchphrases    
+    catchphrasesEl.textContent = '';
+    const newCatchEl = document.createElement('p');   
     // loop through each catchphrase in state
     for (let catchphrase of catchphrases) {
-
     // and for each catchphrase
-    // create an HTML element with the catchphrase as its text content
-        const catchphrasesEl = document.createElement('p');    
-        catchphrasesEl.textContent = catchphrase;
+    // create an HTML element with the catchphrase as its text content  
+        newCatchEl.textContent = catchphrase; 
         catchphrasesEl.classList.add('catchphrase');
         // and append that HTML element to the cleared-out DOM
-        catchphraseEl.append(catchphrase);
+        catchphrasesEl.append(catchphrase);
 
     }
 }
